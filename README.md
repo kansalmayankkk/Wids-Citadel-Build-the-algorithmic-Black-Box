@@ -1,11 +1,11 @@
 # Citadel-Build-the-algorithmic-Black-Box - 24B3019
  
 
-## 🟦 WEEK 0 — Core Concepts & Setup
+## WEEK 0 — Core Concepts & Setup
 
 This week was about understanding how a Limit Order Book works and setting up the basic skeleton of the project.
 
-### 🎯 Goals
+###  Goals
 
 - Understand bids, asks, price levels, FIFO ordering
 - Learn matching rule:  
@@ -14,13 +14,13 @@ Trade happens if best_bid >= best_ask
 - Decide to use a **discrete event clock**, not wall-clock time
 - Create the basic project structure
 
-### 📂 Initial Project Layout
+###  Initial Project Layout
 .
 ├── market.py # Order + OrderBook classes
 ├── simulator.py # Clock + engine shell
 └── main.py # testing & running
 
-### 🧠 Key Takeaways
+###  Key Takeaways
 
 - **Bids are sorted descending**
 - **Asks are sorted ascending**
@@ -31,11 +31,11 @@ No fancy stuff yet — just strong fundamentals.
 
 ---
 
-## 🟩 WEEK 1 — Matching Engine & Order Book Logic
+##  WEEK 1 — Matching Engine & Order Book Logic
 
 This is where the real engine was built.
 
-### 🎯 Goals
+###  Goals
 
 - Implement:
   - limit orders
@@ -53,7 +53,7 @@ This is where the real engine was built.
 - Deterministic timestamps per event
 - Trade log created
 
-### 📌 Example Logic (Conceptual)
+###  Example Logic (Conceptual)
 
 
 
@@ -68,24 +68,24 @@ If quantity remains → store in book
 markdown
 Copy code
 
-### ✅ Result
+###  Result
 
 We now have a **fully-functioning LOB matching engine**.
 
 ---
 
-## 🟨 WEEK 2 — Agents, Simulation Loop & Depth View
+##  WEEK 2 — Agents, Simulation Loop & Depth View
 
 Now we move from “engine” → “market simulator”.
 
-### 🎯 Goals
+###  Goals
 
 - Add **Agent interface**
 - Build a **Simulator that runs event-by-event**
 - Add utilities to print **top-of-book + depth**
 - Make everything replay-deterministic
 
-### 👤 Agent System
+###  Agent System
 
 Agents can:
 
@@ -96,7 +96,7 @@ Agents can:
 
 A simple **RandomAgent** was added for testing — you can later replace it with smarter RL/alpha-based logic.
 
-### ⏱ Discrete Event Simulator
+###  Discrete Event Simulator
 
 The simulator handles:
 
@@ -105,7 +105,7 @@ The simulator handles:
 - printing state
 - verifying same stream → same trades
 
-### 📊 Order Book Depth Output
+###  Order Book Depth Output
 
 Example output looks like:
 
@@ -120,7 +120,7 @@ ASKS
 101.80 x 250
 
 
-### 🚀 Final Structure
+###  Final Structure
 
 
 
@@ -132,7 +132,7 @@ ASKS
 
 ---
 
-## 🧩 Future Ideas
+##  Future Ideas
 
 Some natural next steps:
 
@@ -145,7 +145,7 @@ Some natural next steps:
 
 ---
 
-## ⚙️ Requirements
+##  Requirements
 
 Python **3.9+**
 
@@ -153,7 +153,7 @@ No external libs required unless you add plotting later.
 
 ---
 
-## ▶️ Running the Simulator
+##  Running the Simulator
 
 
 python main.py
